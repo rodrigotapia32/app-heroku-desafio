@@ -1,0 +1,26 @@
+<div class="container md-p-5 text-center">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Email</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each users}}
+        <tr>
+          <td>{{this.username}}</td>
+          <td>{{this.email}}</td>
+          <td>{{formatear "fecha" this.created_at}}</td>
+          <td><a href="/user-delete/{{this.id}}" class="btn btn-danger">Eliminar</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <a href="/user-create" class="btn btn-primary mt-2">Crear</a>
+</div>
